@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alan-Çevre</title>
+  <style>
+    .kod {
+      text-decoration: none;
+      color: yellowgreen;
+      font-size: 25px;
+    }
+
+    /*.html {
+      background-color: rgb(206, 240, 240);
+      width: 400px;
+      height: 200px;
+    }
+
+    .js {
+      background-color: rgb(206, 240, 240);
+      width: 400px;
+      height: 330px;
+    }*/
+  </style>
+</head>
+
+<body>
+  <h1>Alan ve Çevre Hesaplama</h1>
+  <label>Kısa Kenar</label>
+  <input type="number" id="kisaKenar">
+  <label>Uzun Kenar</label>
+  <input type="number" id="uzunKenar">
+  <button id="hesapla">Hesapla</button>
+
+  <div id="cevre"></div>
+  <div id="alan"></div>
+
+  <p><a href="alankod.html" class="kod" target="_blank">Kodlara Bakmak İçin tıklayınız</a></p>
+
+  <script>
+    let kisaKenar = document.getElementById('kisaKenar');
+    let uzunKenar = document.getElementById('uzunKenar');
+    let alan = document.getElementById('alan');
+    let cevre = document.getElementById('cevre');
+
+    function hesapla() {
+      let kk = Number(kisaKenar.value);
+      let uk = Number(uzunKenar.value);
+
+      let dAlan = uk * kk
+      let dCevre = 2 * (uk + kk);
+
+      alan.innerHTML = "Alan: " + dAlan
+      cevre.innerHTML = "Çevre: " + dCevre
+    }
+
+    let hspBtn = document.getElementById('hesapla');
+    hspBtn.onclick = hesapla;
+  </script>
+</body>
+
+</html>

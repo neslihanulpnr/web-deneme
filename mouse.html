@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Fareyi Takip Eden Kutu</title>
+    <style>
+        .kod {
+            text-decoration: none;
+            color: yellowgreen;
+            font-size: 25px;
+        }
+
+        body {
+            background: #3C3741;
+        }
+
+        #kutu {
+            background: cadetblue;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="kutu">
+    </div>
+
+    <p><a href="mousekod.html" class="kod" target="_blank">Kodlara Bakmak İçin tıklayınız</a></p>
+
+    <script>
+        let kutu = document.getElementById('kutu')
+        kutu.style.position = "absolute"
+        window.onmousemove = function (e) {
+            kutu.style.left = e.clientX + "px";
+            kutu.style.top = e.clientY + "px";
+        }
+    </script>
+</body>
+
+</html>

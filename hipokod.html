@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipotenüs</title>
+    <style>
+        *{
+            background-color: lightgray;
+        }
+           .js{
+            width: 100%;
+            height: 300px;
+            margin-left: 30px;
+            background-color: yellowgreen;
+        }
+        
+        .html{
+            width: 100%;
+            height: 120px;
+            margin-left: 30px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <textarea class="html" readonly>
+    html kodu
+
+        <input placeholder="1. Kenarı girin" type="text" id="kenar1">
+        <input placeholder="2. Kenarı girin" type="text" id="kenar2">
+        <button id="btn">HESAPLA</button>
+        <div id="sonuc"></div>
+    </textarea>
+
+    <textarea class="js" readonly>
+    javascript kodu
+
+        let kenar1 = document.getElementById('kenar1');
+        let kenar2 = document.getElementById('kenar2');
+
+        function hesapla() {
+            var k1 = Number(kenar1.value);
+            var k2 = Number(kenar2.value);
+
+            var hipotenus = Math.sqrt((k1 * k1) + (k2 + k2));
+            document.getElementById('sonuc').innerHTML = "Hipotenüs : " + hipotenus;
+        }
+
+        let hesapBtn = document.getElementById('btn');
+        hesapBtn.onclick = hesapla;
+    </textarea>
+</body>
+</html>

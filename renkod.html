@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rastgele renk</title>
+    <style>
+        *{
+            background-color: lightgray;
+        }
+           .js{
+            width: 100%;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+        
+        .html{
+            width: 100%;
+            height: 50px;
+            background-color: yellowgreen;
+        }
+
+        .css{
+            width: 100%;
+            height: 100px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <textarea class="html" readonly>
+    html kodu
+        <button id="generate-color-btn">rastgele renk uret</button>
+    </textarea>
+
+    <textarea class="css">
+    css kodu    
+        body{
+            background: rgb(0, 0, 0);
+            transition: 1s all;
+        }
+    </textarea>
+
+    <textarea class="js" readonly>
+    javascript kodu    
+    
+        const button = document.getElementById('generate-color-btn')
+        const colors = ['red', 'blue', 'yellow', 'green', 'purple', 'pink', 'orange']
+        const generateRandomNumber = (maxNumber) => {
+        return Math.floor(
+        Math.random() * (maxNumber + 1)
+        )  
+        }
+        const generateRGBColor = () => {
+        return [
+        generateRandomNumber(255),
+        generateRandomNumber(255),
+        generateRandomNumber(255),
+        ]
+        }
+        button.addEventListener('click', () => {
+        document.body.style.backgroundColor = `rgb(${generateRGBColor().join(', ')})`   
+        })
+    </textarea>
+</body>
+</html>

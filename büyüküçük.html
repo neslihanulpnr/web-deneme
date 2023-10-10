@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Büyük harf yapma</title>
+    <style>
+                .kod {
+            text-decoration: none;
+            color: yellowgreen;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<h1>Büyük-Küçük Harf Yapmak</h1>
+
+    <label>Cümle: </label>
+    <input type="text" id="cumle">
+
+    <button id="bYap" onclick="bYap()">Büyük Yap</button>
+
+    <button id="kYap" onclick="kYap()">Küçük Yap</button>
+
+    <div id="yaz"></div>
+
+    <p><a href="büyüküçükod.html" class="kod" target="_blank">Kodlara Bakmak İçin tıklayınız</a></p>
+
+    <script>
+        function bYap(){
+let cumle = document.getElementById("cumle").value;
+let buyukCumle = cumle.toUpperCase();
+let yaz = document.getElementById("yaz");
+yaz.textContent = buyukCumle;
+}
+
+function kYap(){
+let cumle = document.getElementById("cumle").value;
+let kucukCumle = cumle.toLowerCase();
+let yaz = document.getElementById("yaz");
+yaz.textContent = kucukCumle;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sayı arttır</title>
+    <style>
+        * {
+            text-align: center;
+            background-color: cadetblue;
+        }
+
+        .kod {
+            text-decoration: none;
+            color: yellowgreen;
+            font-size: 25px;
+        }
+
+        .p {
+            font-size: 40px;
+            font-weight: 40px;
+            margin-top: 300px;
+        }
+
+        .btn-increase {
+            background-color: brown;
+            font-size: 30px;
+            font-weight: 20px;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+        }
+
+        .btn-decrease {
+            background-color: brown;
+            font-size: 30px;
+            font-weight: 20px;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <p class="p">1</p>
+        <button class="btn-increase">Arttır</button>
+        <button class="btn-decrease">Azalt</button>
+    </div>
+
+    <p><a href="artkod.html" class="kod" target="_blank">Kodlara Bakmak İçin tıklayınız</a></p>
+
+    <script>
+        const increaseButton = document.querySelector('.btn-increase');
+        const decreaseButton = document.querySelector('.btn-decrease');
+        const p = document.querySelector('.p')
+
+        let count = 1;
+
+
+
+        increaseButton.addEventListener('click', () => {
+            count++;
+            p.innerHTML = count;
+        });
+
+        decreaseButton.addEventListener('click', () => {
+            if (count > 1) {
+                count--;
+                p.innerHTML = count;
+            }
+        }); 
+    </script>
+</body>
+
+</html>

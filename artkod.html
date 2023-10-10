@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arttır Azalt</title>
+    <style>
+        *{
+            background-color: lightgray;
+        }
+          .js{
+            width: 600px;
+            height: 350px;
+            margin-left: 30px;
+            background-color: yellowgreen;
+        }
+        
+        .html{
+            width: 600px;
+            height: 110px;
+            margin-left: 30px;
+            background-color: yellowgreen;
+        }
+
+        .css{
+            width: 600px;
+            height: 470px;
+            margin-left: 30px;
+            background-color: yellowgreen; 
+        }
+    </style>
+</head>
+<body>
+    <textarea class="html" readonly>
+    Html Kodu
+            <div class="navbar">
+            <p class="p">1</p>
+            <button class="btn-increase">Arttır</button>
+            <button class="btn-decrease">Azalt</button>
+            </div> 
+    </textarea>
+
+    <textarea class="css" readonly>
+    Css Kodu 
+        *{
+            text-align: center;
+            background-color: cadetblue;
+        }
+        
+        .p{
+            font-size: 40px;
+            font-weight: 40px;
+            margin-top: 300px;
+        }
+        
+        .btn-increase{
+            background-color: brown;
+            font-size: 30px;
+            font-weight: 20px;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+        }
+        
+        .btn-decrease{
+            background-color: brown;
+            font-size: 30px;
+            font-weight: 20px;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+        }
+        
+    </textarea>
+
+    <textarea class="js" readonly>
+        JavaScript Kodu
+
+        const increaseButton = document.querySelector('.btn-increase');
+        const decreaseButton = document.querySelector('.btn-decrease');
+        const p = document.querySelector('.p')
+        
+        let count = 1;
+        
+        
+        
+        increaseButton.addEventListener('click', () => {
+            count++;
+            p.innerHTML = count;
+        });
+        
+        decreaseButton.addEventListener('click', () => {
+            if (count > 1) {
+                count--;
+                p.innerHTML = count;
+            }
+        }); 
+    </textarea>
+</body>
+</html>

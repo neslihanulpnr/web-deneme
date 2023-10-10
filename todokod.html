@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <style>
+        *{
+            background-color: lightgray;
+        }
+                  .js{
+            width: 100%;
+            height: 400px;
+            margin-left: 30px;
+            background-color: yellowgreen;
+        }
+        
+        .html{
+            width: 100%;
+            height: 230px;
+            margin-left: 30px;
+            background-color: yellowgreen;
+        }
+
+        .css{
+            width: 100%;
+            height: 1000px;
+            margin-left: 30px;
+            background-color: yellowgreen; 
+        }
+    </style>
+</head>
+<body>
+  <textarea class="html" readonly>
+    Html Kodu
+        <div class="container">
+        <div class="logo">
+        <a href="#"><i class="fa-solid fa-list-check"></i></a>
+        </div>
+        <div class="navbar">
+        <h2>To-Do List</h2>
+        <input type="text" id="inputText">
+        <input type="submit" id="addToDo" value="Add">
+        <input type="submit" id="clearToDo" value="Clear">
+        </div>
+         
+        <div class="to-dos" id="toDoContainer">
+        </div>
+        </div>
+  </textarea>
+
+  <textarea class="css" readonly>
+Css Kodu
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: lightpink;
+    }
+    
+    .container .navbar{
+        text-align: center;
+        font-size: 30px;
+        padding-top: 50px;
+    }
+     
+    .logo{
+        font-size: 50px;
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+    
+    #inputText{
+        border-radius: 50px;
+        border: 1px solid black;
+        width: 200px;
+        height: 40px;
+    }
+    
+    #addToDo{
+        border-radius: 50px;
+        border: 1px solid black;
+        width: 90px;
+        height: 40px;
+        cursor: pointer;
+        outline: none;
+    }
+    
+    #addToDo:active{
+        background-color: lightblue;
+    }
+    
+    #clearToDo{
+        border-radius: 50px;
+        border: 1px solid black;
+        width: 90px;
+        height: 40px;
+        cursor: pointer;
+        outline: none;
+    }
+    
+    #clearToDo:active{
+        background-color: lightblue;
+    }
+    
+    .paragraph-styling{
+        margin-left: 800px;
+        cursor: pointer;
+        font-size: 35px;
+        text-transform: capitalize;
+        color: black;
+    }
+    
+    .to-dos{
+        margin-top: 25px;
+    }
+  </textarea>
+
+  <textarea class="js" readonly>
+Javascript Kodu
+     let addToDoButton = document.getElementById('addToDo');
+     let clearToDo = document.getElementById('clearToDo');
+     let toDoContainer = document.getElementById('toDoContainer');
+     let inputText = document.getElementById('inputText');
+
+     addToDoButton.addEventListener('click', function(){
+     let paragraph = document.createElement('p');
+     paragraph.classList.add('paragraph-styling');
+     toDoContainer.appendChild(paragraph);
+     paragraph.innerHTML = inputText.value;
+     inputText.value = "";
+
+     paragraph.addEventListener('click', function(){
+        paragraph.style.textDecoration = 'line-through';
+     });
+ 
+     paragraph.addEventListener('dblclick', function(){
+        toDoContainer.removeChild(paragraph);
+     });
+
+     clearToDo.addEventListener('click', function(){
+        paragraph.remove();
+     })
+     })
+  </textarea>
+</body>
+</html>

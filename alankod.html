@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Çevre Hesaplama</title>
+    <style>
+*{
+    background-color: lightgray;
+}
+
+.html{
+    width: 100%;
+    height: 200px;
+    background-color: yellowgreen;
+}
+
+.js{
+    width: 100%;
+    height: 350px;
+    background-color: yellowgreen;
+}
+    </style>
+</head>
+<body>
+    <textarea class="html" readonly>
+    html kodu    
+        
+        <h1>Alan ve Çevre Hesaplama</h1>
+        <label>Kısa Kenar</label>
+        <input type="number" id="kisaKenar">
+        <label>Uzun Kenar</label>
+        <input type="number" id="uzunKenar">
+        <button id="hesapla">Hesapla</button>
+      
+        <div id="cevre"></div>
+        <div id="alan"></div>
+    </textarea>
+
+    <textarea class="js" readonly>
+    javascript kodu
+
+        let kisaKenar = document.getElementById('kisaKenar');
+        let uzunKenar = document.getElementById('uzunKenar');
+        let alan = document.getElementById('alan');
+        let cevre = document.getElementById('cevre');
+    
+        function hesapla() {
+          let kk = Number(kisaKenar.value);
+          let uk = Number(uzunKenar.value);
+    
+          let dAlan = uk * kk
+          let dCevre = 2 * (uk + kk);
+    
+          alan.innerHTML = "Alan: " + dAlan
+          cevre.innerHTML = "Çevre: " + dCevre
+        }
+    
+        let hspBtn = document.getElementById('hesapla');
+        hspBtn.onclick = hesapla;
+    </textarea>
+</body>
+</html>
